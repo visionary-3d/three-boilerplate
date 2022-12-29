@@ -1,0 +1,34 @@
+html {
+  font-size: $font-size;
+  font-family: $font-family;
+  background: $background-color;
+  color: $font-color;
+  line-height: 1.4;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  max-width: $page-width;
+}
+
+canvas {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  margin: 0 0 2rem;
+}
+
+.image {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  background-image: url('~assets/example.png');
+  background-size: cover;
+}
