@@ -23,6 +23,7 @@ const startApp = () => {
   const { width, height } = useRenderSize()
 
   const ROTATION_SPEED = 0.02
+  const MOTION_BLUR_AMOUNT = 0.725
 
   const dirLight = new THREE.DirectionalLight('#ffffff', 1)
   const ambientLight = new THREE.AmbientLight('#ffffff', 0.5)
@@ -57,7 +58,7 @@ const startApp = () => {
   // blend pass
   const blendPass = new ShaderPass(BlendShader, 'tDiffuse1')
   blendPass.uniforms['tDiffuse2'].value = savePass.renderTarget.texture
-  blendPass.uniforms['mixRatio'].value = 0.9
+  blendPass.uniforms['mixRatio'].value = MOTION_BLUR_AMOUNT
 
   // output pass
   const outputPass = new ShaderPass(CopyShader)
