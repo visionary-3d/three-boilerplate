@@ -1,20 +1,17 @@
 import * as THREE from 'three'
 import {
   addPass,
-  initialize,
   useCamera,
   useGui,
   useRenderSize,
   useScene,
-  useTick,
+  useTick
 } from './render/init.js'
 // import postprocessing passes
 import { SavePass } from 'three/examples/jsm/postprocessing/SavePass.js'
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js'
 import { BlendShader } from 'three/examples/jsm/shaders/BlendShader.js'
 import { CopyShader } from 'three/examples/jsm/shaders/CopyShader.js'
-
-initialize()
 
 const startApp = () => {
   const scene = useScene()

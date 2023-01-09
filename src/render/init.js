@@ -1,10 +1,10 @@
 import * as THREE from 'three'
-import TickManager from './tick-manager.js'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GUI } from 'three/examples/jsm/libs/lil-gui.module.min.js'
 import Stats from 'three/examples/jsm/libs/stats.module.js'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js'
+import TickManager from './tick-manager.js'
 
 let scene,
   camera,
@@ -18,7 +18,7 @@ let scene,
   renderAspectRatio
 const renderTickManager = new TickManager()
 
-export const initialize = () => {
+export const initEngine = async () => {
   scene = new THREE.Scene()
 
   renderWidth = window.innerWidth

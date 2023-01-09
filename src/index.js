@@ -1,5 +1,8 @@
-// Test import of styles
-import '@/styles/index.scss'
-import startApp from './app'
+import '@/styles/index.scss';
+import startApp from './app';
+import { initEngine } from './render/init';
 
-startApp();
+(async () => {
+    await initEngine()
+    startApp()
+})()
