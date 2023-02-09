@@ -66,13 +66,13 @@ const startApp = () => {
   addPass(savePass)
   addPass(outputPass)
 
-  const animateBox = () => {
+  const animateIco = () => {
     ico.rotation.x += ROTATION_SPEED
     ico.rotation.y += ROTATION_SPEED
   }
 
   useTick(({ timestamp, timeDiff }) => {
-    animateBox()
+    animateIco()
   })
 }
 
