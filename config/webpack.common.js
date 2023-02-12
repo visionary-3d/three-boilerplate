@@ -13,7 +13,7 @@ module.exports = {
     path: paths.build,
     filename: '[name].bundle.js',
     publicPath: '/',
-    hashFunction: "xxhash64",
+    hashFunction: 'xxhash64',
   },
 
   // Customize the webpack build process
@@ -56,6 +56,9 @@ module.exports = {
 
       // Fonts and SVGs: Inline files
       { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
+
+      // GLSL: Raw loader
+      { test: /\.(glsl|vs|fs|vert|frag)$/, exclude: /node_modules/, use: 'raw-loader' }
     ],
   },
 

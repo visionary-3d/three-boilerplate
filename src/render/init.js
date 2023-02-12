@@ -29,11 +29,14 @@ export const initEngine = async () => {
   camera = new THREE.PerspectiveCamera(75, renderAspectRatio, 0.1, 100)
   camera.position.z = 2
 
-  renderer = new THREE.WebGLRenderer()
+  renderer = new THREE.WebGLRenderer({ antialias: true })
   renderer.setSize(renderWidth, renderHeight)
   document.body.appendChild(renderer.domElement)
 
-  composer = new EffectComposer(renderer)
+  const target = new THREE.WebGLRenderTarget(renderWidth, renderHeight, {
+    samples: 16,
+  })
+  composer = new EffectComposer(renderer, target)
   const renderPass = new RenderPass(scene, camera)
   composer.addPass(renderPass)
 
@@ -50,6 +53,8 @@ export const initEngine = async () => {
       renderWidth = window.innerWidth
       renderHeight = window.innerHeight
       renderAspectRatio = renderWidth / renderHeight
+
+      renderer.setPixelRatio(window.devicePixelRatio * 1.5)
 
       camera.aspect = renderAspectRatio
       camera.updateProjectionMatrix()
