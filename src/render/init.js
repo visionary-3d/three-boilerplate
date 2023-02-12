@@ -29,7 +29,7 @@ export const initEngine = async () => {
   camera = new THREE.PerspectiveCamera(75, renderAspectRatio, 0.1, 100)
   camera.position.z = 2
 
-  renderer = new THREE.WebGLRenderer()
+  renderer = new THREE.WebGLRenderer({ antialias: true })
   renderer.setSize(renderWidth, renderHeight)
   document.body.appendChild(renderer.domElement)
 
