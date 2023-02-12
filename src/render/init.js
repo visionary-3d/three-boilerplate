@@ -34,7 +34,7 @@ export const initEngine = async () => {
   document.body.appendChild(renderer.domElement)
 
   const target = new THREE.WebGLRenderTarget(renderWidth, renderHeight, {
-    samples: 16,
+    samples: 8,
   })
   composer = new EffectComposer(renderer, target)
   const renderPass = new RenderPass(scene, camera)
