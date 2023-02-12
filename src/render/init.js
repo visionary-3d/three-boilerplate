@@ -46,6 +46,7 @@ export const initEngine = async () => {
   gui = new GUI()
 
   controls = new OrbitControls(camera, renderer.domElement)
+  controls.enableDamping = true
 
   window.addEventListener(
     'resize',
