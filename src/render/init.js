@@ -31,6 +31,7 @@ export const initEngine = async () => {
 
   renderer = new THREE.WebGLRenderer({ antialias: true })
   renderer.setSize(renderWidth, renderHeight)
+  renderer.setPixelRatio(window.devicePixelRatio * 1.5)
   
   // shadow
   renderer.shadowMap.enabled = true
