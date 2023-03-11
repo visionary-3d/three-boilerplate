@@ -31,10 +31,6 @@ const startApp = () => {
     color: '#4e62f9',
   })
   const ico = new THREE.Mesh(geometry, material)
-  ico.add = new THREE.Mesh(
-    new THREE.WireframeGeometry(geometry),
-    new THREE.LineBasicMaterial({ color: '#000000' })
-  )
   scene.add(ico)
 
   // GUI
