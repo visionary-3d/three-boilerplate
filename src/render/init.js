@@ -43,6 +43,8 @@ export const initEngine = async () => {
     samples: 8,
   })
   composer = new EffectComposer(renderer, target)
+  composer.setPixelRatio(renderer.getPixelRatio())
+  
   const renderPass = new RenderPass(scene, camera)
   composer.addPass(renderPass)
 
